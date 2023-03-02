@@ -1,25 +1,24 @@
 # JUnit5-With-Allure-Reports
 
 #Apache Maven 3.6.3
-Instalar maven no linux:
+#Instalar maven no linux:
 sudo apt install maven
 
 #NPM 8.5.1
-Instalar npm no linux
+#Instalar npm no linux
 sudo apt-get install npm
 
 #Allure 2.21.1
 
-Instalar allure no linux:
-Allure requires Java 8 or higher
+#Instalar allure no linux:
+#Allure requires Java 8 or higher
 npm install -g allure-commandline --save-dev
 
 
-#Propriedades necessárias para configuração do projeto, inserir no properties
+#Propriedades necessárias para configuração do projeto, inserir no properties.
 
- <properties>
  <aspectj.version>1.9.4</aspectj.version>
- </properties>
+
  
 #Bibliotecas necessárias para a execução  do projeto
 
