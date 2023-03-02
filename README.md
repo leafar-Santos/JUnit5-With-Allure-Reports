@@ -17,8 +17,10 @@ npm install -g allure-commandline --save-dev
 
 #Propriedades necessárias para configuração do projeto, inserir no properties
 
+ <properties>
  <aspectj.version>1.9.4</aspectj.version>
-
+ </properties>
+ 
 #Bibliotecas necessárias para a execução  do projeto
 
       <dependency>
@@ -72,5 +74,7 @@ mvn clean test
 
 #Para visualizar report, no terminal digite:
 allure generate
+
+#Em seguida digite:
 allure open
 			
