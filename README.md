@@ -78,8 +78,10 @@ npm install -g allure-commandline --save-dev
 mvn clean test
 
 #Para visualizar report, no terminal digite:
+
 allure generate
 
-#Em seguida digite:
+Em seguida digite:
+
 allure open
 			
