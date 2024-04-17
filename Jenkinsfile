@@ -11,7 +11,7 @@ pipeline {
             steps {
                 bat 'mvn clean'
                 bat 'xcopy /s /e /i /y "allure-report//history" "allure-results//history"'
-                bat 'rmdir /s /q allure-report'
+                //bat 'rmdir /s /q allure-report'
             }
         }
 
