@@ -25,6 +25,9 @@ pipeline {
     }
     post {
         always {
+            // Esperar até que os resultados dos testes estejam disponíveis
+            waitForQualityGate abortPipeline: true
+
             // Gerar relatório Allure
             allure([
                 includeProperties: false,
