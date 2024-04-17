@@ -24,14 +24,14 @@ pipeline {
                     script {
                         // Gerar o relatório do Allure
                         allure([
+                            clean:true
                             includeProperties: false,
                             jdk: '',
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: 'target/allure-results']]
                         ])
-                        // Gerar o relatório final
-                        bat 'allure generate --clean
+                     
                     }
                 }
             }
