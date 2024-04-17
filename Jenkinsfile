@@ -18,7 +18,7 @@ pipeline {
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']]
+                        results: [[path: 'allure-results']]
                     ])
                     // Arquivar e substituir histórico de tendência do Allure
                     archiveArtifacts artifacts: 'allure-report/history-trend.json'
