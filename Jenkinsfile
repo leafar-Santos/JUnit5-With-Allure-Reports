@@ -6,9 +6,9 @@ pipeline {
                 bat 'echo inicio'
             }
         }
-        stage ('Meio'){
+        stage ('Executando testes JUnit 5'){
             steps{
-                bat 'echo meio'
+             bat 'mvn clean install'
             }
         }
         stage ('Fim'){
