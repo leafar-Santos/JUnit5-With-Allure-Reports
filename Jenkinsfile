@@ -12,11 +12,14 @@ pipeline {
             }
             post {
                 always {
+                    // Remover resultados antigos do Allure
+                    deleteDir(dir: 'allure-results')
+
+                    // Gerar relatório Allure
                     allure([
                         includeProperties: false,
                         jdk: '',
-                        results: [[path: 'allure-results']],
-                        clean: true
+                        results: [[path: 'allure-results']]
                     ])
                 }
             }
