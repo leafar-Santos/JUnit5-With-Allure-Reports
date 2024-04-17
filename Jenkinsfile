@@ -12,7 +12,7 @@ pipeline {
               bat 'mvn clean test'
            }
         post{
-            success{ allure([
+            failure{ allure([
                  includeProperties: false,
                  jdk: '',
                  properties:[],
