@@ -15,12 +15,12 @@ pipeline {
                     script {
                         // Gerar o relatório do Allure
                         allure([
-                            clean:true,
                             includeProperties: false,
                             jdk: '',
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'allure-results']]
+                            results: [[path: 'allure-results']],
+                            clean:true
                         ])
 
                     }
