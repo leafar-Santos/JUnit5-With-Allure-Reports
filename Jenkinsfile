@@ -13,6 +13,7 @@ pipeline {
             post {
                 always {
                     script {
+                     bat 'allure generate --clean'
                         // Gerar o relatório do Allure
                         allure([
                             includeProperties: false,
@@ -22,8 +23,8 @@ pipeline {
                             results: [[path: 'target/allure-results']],
                             clean:true
                         ])
-                        // Gerar o relatório final
-                        bat 'allure generate --clean'
+                        
+
                     }
                 }
             }
