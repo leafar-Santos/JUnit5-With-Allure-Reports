@@ -10,11 +10,10 @@ pipeline {
             steps {
                 bat 'mvn test'
             }
-
+    }
         stage('Gerando report'){
-
-        steps{
-           bat 'allure generate --clean'
+             steps{
+                bat 'allure generate --clean'
             }
         post {
                         always {
