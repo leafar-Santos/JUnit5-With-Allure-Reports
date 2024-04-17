@@ -22,7 +22,8 @@ pipeline {
                             results: [[path: 'allure-results']],
                             clean:true
                         ])
-
+                        // Gerar o relatório final
+                        bat 'allure generate --clean -o allure-report allure-results'
                     }
                 }
             }
