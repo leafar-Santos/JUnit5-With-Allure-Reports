@@ -15,7 +15,11 @@ pipeline {
 
         stage ('Allure'){
             steps{
-               allure includeProperties: false, jdk: '', results: [[path: 'allure_results']]
+               allure includeProperties: false,
+               jdk: '',
+               properties:[],
+               reportBuildPolicy: 'ALWAYS',
+               results: [[path: 'target/allure_results']]
                }
              }
 
