@@ -19,15 +19,18 @@ pipeline {
 
                     // Copiar resultados da execução atual de volta para o diretório allure-results
                     sh 'mv allure-results-temp allure-results'
-
-                    // Gerar relatório Allure
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        results: [[path: 'allure-results']]
-                    ])
                 }
             }
+        }
+    }
+    post {
+        always {
+            // Gerar relatório Allure
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-results']]
+            ])
         }
     }
 }
