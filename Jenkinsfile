@@ -10,31 +10,18 @@ pipeline {
             steps {
                 bat 'mvn test'
             }
-    }
-        stage('Gerando report'){
-             steps{
-                bat 'allure generate --clean'
+            post {
+                always {
+                    // Garantir que o relatório anterior seja removido
+                    cleanWs()
+                }
             }
-        post {
-                        always {
-                            script {
-
-                                // Gerar o relatório do Allure
-                                allure([
-                                    includeProperties: false,
-                                    jdk: '',
-                                    properties: [],
-                                    reportBuildPolicy: 'ALWAYS',
-                                    results: [[path: 'target/allure-results']],
-                                    clean:true
-                                ])
-
-
-                            }
-                        }
-          
         }
-
+        stage('Gerando report') {
+            steps {
+                // Gerar o relatório do Allure
+                bat 'allure generate --clean -o allure-report allure-results'
+            }
         }
     }
 }
