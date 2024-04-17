@@ -8,13 +8,18 @@ pipeline {
         }
         stage ('Executando testes JUnit 5'){
             steps{
-             bat 'mvn clean install'
+             bat 'mvn clean test'
             }
         }
-        stage ('Fim'){
+        stage ('Gerando Relatório Allure'){
             steps{
-                bat 'echo fim'
+                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
             }
         }
+          stage ('Fim'){
+                    steps{
+                        bat 'echo fim'
+                    }
+                }
     }
 }
