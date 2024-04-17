@@ -30,6 +30,8 @@ pipeline {
                             reportBuildPolicy: 'ALWAYS',
                             results: [[path: 'target/allure-results']]
                         ])
+                        // Gerar o relatório final
+                        bat 'allure generate --clean -o target/allure-report target/allure-results'
                     }
                 }
             }
