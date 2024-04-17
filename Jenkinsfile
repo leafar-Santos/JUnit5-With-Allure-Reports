@@ -12,7 +12,7 @@ pipeline {
               bat 'mvn clean test'
            }
         post{
-             allure([
+            failure{ allure([
                  includeProperties: false,
                  jdk: '',
                  properties:[],
@@ -20,7 +20,7 @@ pipeline {
                  results: [[path: 'allure_results']]
             ])
 
-                
+                }
             }
         }
     }
