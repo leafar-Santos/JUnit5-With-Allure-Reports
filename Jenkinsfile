@@ -19,13 +19,22 @@ pipeline {
             }
             post {
                 always {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']]
-                    ])
+                    script {
+                        // Copiar a pasta history para allure-results
+                        bat 'xcopy /s /e "allure-report\\history" "allure-results\\history"'
+
+                        // Excluir a pasta allure-report
+                        bat 'rmdir /s /q allure-report'
+
+                        // Gerar o relatório do Allure novamente
+                        allure([
+                            includeProperties: false,
+                            jdk: '',
+                            properties: [],
+                            reportBuildPolicy: 'ALWAYS',
+                            results: [[path: 'target/allure-results']]
+                        ])
+                    }
                 }
             }
         }
