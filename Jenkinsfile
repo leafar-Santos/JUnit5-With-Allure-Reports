@@ -17,8 +17,7 @@ pipeline {
                  jdk: '',
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
-                 report: 'allure-reports',
-                 results: [[path: '/target/allure-reports']],
+                 results: [[path: 'target/allure-reports']],
 
             ])
 
