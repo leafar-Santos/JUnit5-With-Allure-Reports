@@ -14,6 +14,7 @@ pipeline {
         stage('Generate Allure Report') {
                     steps {
                         script {
+                            ws('') {
                                 allure([
                                     includeProperties: false,
                                     jdk: '',
@@ -21,9 +22,9 @@ pipeline {
                                     reportBuildPolicy: 'ALWAYS',
                                     results: [[path: 'allure-results']]
                                 ])
+                            }
                         }
                     }
-
         stage ('Fim'){
                     steps{
                     bat 'echo fim'
