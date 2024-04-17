@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled(value = "Quando o @Disabled é colocado na classe,  todos os métodos dela são ignorados")
+//@Disabled(value = "Quando o @Disabled é colocado na classe,  todos os métodos dela são ignorados")
 public class IgnorandoClasseTest {
 
     @Test
