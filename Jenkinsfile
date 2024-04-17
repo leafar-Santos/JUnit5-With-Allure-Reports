@@ -18,11 +18,23 @@ pipeline {
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
                  report: 'allure_reports',
-                 results: [[path: 'target/allure_results']]
+                 results: [[path: 'target/allure-results']]
             ])
 
                 }
             }
         }
+        
+        stage('Rapport Allure') {
+            script {
+                allure([
+                includeProperties: false,
+                jdk: '',
+                properties: [],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure-results']]
+                        ])
+                }
+            }
     }
 }
