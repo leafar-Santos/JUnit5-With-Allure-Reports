@@ -33,13 +33,7 @@ public class Asserts_ThatTest {
 
     }
 
-    /*
-    @Test
-    @Ignore
-    public void verificaSeUmIgualUm(){
-        assertThat(1,Matchers.is(2));
-    }
-    */
+
 
 
 }
