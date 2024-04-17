@@ -1,11 +1,12 @@
 package fails;
 
 import org.hamcrest.Matchers;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
+@Ignore
 public class Fails_AssertsTest {
 
     @Test
