@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class IgnorandoTestesTest {
     @Test
-    //@Disabled
+    @Disabled
     public void validar1(){
         Assertions.assertEquals("João", "João");
     }
@@ -20,7 +20,7 @@ public class IgnorandoTestesTest {
     }
 
     @Test
-    //@Disabled
+    @Disabled
     public void validar3(){
         assertThat(true, Matchers.is(true));
     }
