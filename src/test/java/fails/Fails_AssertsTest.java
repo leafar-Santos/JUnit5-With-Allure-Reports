@@ -3,13 +3,10 @@ package fails;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
-public class Fails_Asserts {
+public class Fails_AssertsTest {
 
     @Test
     public void deveFalhar01(){
