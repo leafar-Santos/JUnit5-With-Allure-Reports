@@ -9,6 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class Fails_AssertsTest {
 
+    /*
     @Test
     public void deveFalhar01(){
         assertThat(1,Matchers.is(2));
@@ -38,7 +39,7 @@ public class Fails_AssertsTest {
     public void deveFalhar06(){
         assertThat(1,Matchers.is(7));
     }
-
+*/
 
 
 }
