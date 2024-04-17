@@ -13,10 +13,7 @@ pipeline {
         }
         stage('Allure Reports') {
             steps{
-            allure includeProperties:
-                   false,
-                   jdk: '',
-                   results: [[path: 'build/allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: 'allure_results']]
             }
         }
         stage ('Fim'){
