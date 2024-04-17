@@ -13,7 +13,7 @@ pipeline {
            }
         post{
             success{ allure([
-                 allure includeProperties: false,
+                 includeProperties: false,
                  jdk: '',
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
