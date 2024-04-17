@@ -12,18 +12,8 @@ pipeline {
             }
             post {
                 always {
-                    // Gerar relatório Allure com a opção --clean
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']],
-                        clean: true
-                    ])
-                    // Publicar resultados do Allure
-                    publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'target/allure-report', reportFiles: 'index.html'], reportName: 'Allure Test Report')
-                }
+                allure ([includeProperties: false, jdk: '', results: [[path: 'allure-results']])
+                ])
             }
         }
     }
