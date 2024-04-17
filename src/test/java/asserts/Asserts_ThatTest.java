@@ -32,4 +32,10 @@ public class Asserts_ThatTest {
 
     }
 
+    @Test
+    public void verificaSeUmIgualUm(){
+
+        assertThat(1,Matchers.is(2));
+    }
+
 }

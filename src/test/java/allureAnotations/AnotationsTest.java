@@ -7,7 +7,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class AnotationsTest {
 
-
     @Test
     @Link(name = "História para automação", url="https://www.google.com.br",type = "Jira")
     public void deveInformarOlinkDaTarefaNoJira(){

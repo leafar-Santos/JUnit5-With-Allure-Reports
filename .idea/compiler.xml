@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="JUnit5-With-Allure-Reports" />
         <module name="new-Junit-5" />
       </profile>
     </annotationProcessing>
