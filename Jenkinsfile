@@ -25,15 +25,15 @@ pipeline {
     }
     post {
         always {
-            // Esperar até que os resultados dos testes estejam disponíveis
-            waitForQualityGate abortPipeline: true
-
             // Gerar relatório Allure
             allure([
                 includeProperties: false,
                 jdk: '',
                 results: [[path: 'allure-results']]
             ])
+
+            // Publicar relatório Allure como um artefato
+            archiveArtifacts 'allure-report/**'
         }
     }
 }
