@@ -10,12 +10,5 @@ pipeline {
             steps{
                 bat 'mvn clean test'
         }
-
-        stage ('Fim'){
-            steps{
-                bat 'echo fim'
-           }
-        }
-        }
     }
 }
