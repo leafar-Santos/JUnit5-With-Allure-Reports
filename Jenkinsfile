@@ -9,8 +9,9 @@ pipeline {
         stage ("Executando testes JUnit 5") {
             steps {
                 bat 'mvn test',
-                bat 'allure generate --clean'
             }
+            steps{
+            bat 'allure generate --clean'}
             post {
                 always {
                     script {
