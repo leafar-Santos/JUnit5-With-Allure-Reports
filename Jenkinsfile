@@ -11,13 +11,6 @@ pipeline {
              bat 'mvn clean test'
             }
 
-        stage('Allure'){
-            steps{
-            allure includeProperties: false, jdk: '', results: [[path: 'allure_results']]
-           }
-
-        }
-
         stage ('Fim'){
                     steps{
                     bat 'echo fim'
