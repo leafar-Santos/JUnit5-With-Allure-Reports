@@ -6,18 +6,7 @@ pipeline {
                 bat 'echo inicio'
             }
         }
-
-        stage ('Limpar resultados antigos') {
-            steps {
-                //bat 'mvn clean'
-
-                bat 'xcopy /s /e /i /y "allure-report//history" "allure-results//history"'
-                //bat 'rmdir /s /q allure-report'
-
-            }
-        }
-
-        stage ('Executando testes JUnit 5') {
+        stage ("Executando testes JUnit 5") {
             steps {
                 bat 'mvn test'
             }
