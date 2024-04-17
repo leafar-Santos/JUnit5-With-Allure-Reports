@@ -10,7 +10,8 @@ pipeline {
             steps{
              bat 'mvn clean test'
             }
-        stage{
+
+        stage('Allure'){
             steps{
              allure([
                              includeProperties: false,
