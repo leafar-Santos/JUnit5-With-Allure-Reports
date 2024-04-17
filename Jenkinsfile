@@ -8,13 +8,10 @@ pipeline {
         }
         stage ("Executando testes JUnit 5") {
             steps {
+                // Limpar a pasta de resultados antigos
+                bat 'rm -rf allure-results'
+                // Executar os testes
                 bat 'mvn test'
-            }
-            post {
-                always {
-                    // Garantir que o relatório anterior seja removido
-                    cleanWs()
-                }
             }
         }
         stage('Gerando report') {
