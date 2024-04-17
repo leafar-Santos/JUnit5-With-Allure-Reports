@@ -23,7 +23,7 @@ pipeline {
                             clean:true
                         ])
                         // Gerar o relatório final
-                        bat 'allure generate --clean -o allure-report allure-results'
+                        bat 'allure generate --clean'
                     }
                 }
             }
