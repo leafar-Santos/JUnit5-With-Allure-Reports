@@ -9,13 +9,13 @@ pipeline {
 
         stage ('Limpar resultados antigos') {
             steps {
-                bat 'mvn allure:clean'
+                bat 'mvn clean'
             }
         }
 
         stage ('Executando testes JUnit 5') {
             steps {
-                bat 'mvn clean test'
+                bat 'mvn test'
             }
             post {
                 always {
