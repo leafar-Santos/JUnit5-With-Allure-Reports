@@ -9,16 +9,16 @@ pipeline {
         stage('Executando testes JUnit 5') {
             steps {
                 // Copiar resultados antigos do Allure para um diretório temporário
-                bat 'robocopy allure-results allure-results-temp /e /xf *.* || exit 0'
+                bat 'xcopy allure-results allure-results-temp /s /e /y'
                 bat 'mvn clean test'
             }
             post {
                 always {
                     // Remover resultados antigos do Allure
-                    deleteDir()
+                    bat 'rmdir /s /q allure-results'
 
                     // Copiar resultados da execução atual de volta para o diretório allure-results
-                    bat 'robocopy allure-results-temp allure-results /e || exit 0'
+                    bat 'xcopy allure-results-temp allure-results /s /e /y'
                 }
             }
         }
