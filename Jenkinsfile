@@ -16,5 +16,6 @@ pipeline {
                 bat 'echo fim'
            }
         }
+        }
     }
 }
