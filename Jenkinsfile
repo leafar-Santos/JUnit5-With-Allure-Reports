@@ -11,10 +11,19 @@ pipeline {
              bat 'mvn clean test'
             }
         }
-        stage ('Fim'){
+        stage ('Gerando relatório'){
             steps{
-            bat 'echo fim'
+            allure includeProperties:
+                false,
+                jdk: '',
+                results: [[path: 'allure-results']]
             }
         }
+
+        stage ('Fim'){
+                    steps{
+                    bat 'echo fim'
+                    }
+                }
     }
 }
