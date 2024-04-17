@@ -13,7 +13,16 @@ pipeline {
         }
         stage('Generate Allure Report') {
              steps {
-                  bat 'echo fim'
+              script {
+                ws('your project path') {
+                  allure([
+                  includeProperties: false,
+                  jdk: '',
+                  properties: [],
+                  reportBuildPolicy: 'ALWAYS',
+                  results: [[path: 'allure-results']]
+                 ])
+               }
              }
         }
         stage ('Fim'){
