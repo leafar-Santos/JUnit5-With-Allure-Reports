@@ -17,7 +17,8 @@ pipeline {
                  jdk: '',
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
-                 results: [[path: 'target/allure-results']],
+                 artifacts: 'allure-report/history-trend.json'
+                 results: [[path: 'target/allure-results']]
 
             ])
 
