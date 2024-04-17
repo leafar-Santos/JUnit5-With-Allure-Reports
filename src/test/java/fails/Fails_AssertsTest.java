@@ -9,7 +9,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class Fails_AssertsTest {
 
-    /*
     @Test
     public void deveFalhar01(){
         assertThat(1,Matchers.is(2));
@@ -39,7 +38,38 @@ public class Fails_AssertsTest {
     public void deveFalhar06(){
         assertThat(1,Matchers.is(7));
     }
-*/
+
+    @Test
+    public void deveFalhar07(){
+        assertThat(1,Matchers.is(2));
+    }
+
+    @Test
+    public void deveFalhar8(){
+        assertThat(1,Matchers.is(5));
+    }
+
+    @Test
+    public void deveFalhar9(){
+        assertThat(1,Matchers.is(4));
+    }
+
+    @Test
+    public void deveFalhar10(){
+        assertThat(1,Matchers.is(4));
+    }
+
+    @Test
+    public void deveFalhar11(){
+        assertThat(1,Matchers.is(6));
+    }
+
+    @Test
+    public void deveFalhar12(){
+        assertThat(1,Matchers.is(7));
+    }
+
+
 
 
 }
