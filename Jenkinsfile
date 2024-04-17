@@ -13,24 +13,27 @@ pipeline {
             steps{
                 bat 'allure generate --clean'
             }
-            post {
-                always {
-                    script {
+        stage('Gerando report'){
+        post {
+                        always {
+                            script {
 
-                        // Gerar o relatório do Allure
-                        allure([
-                            includeProperties: false,
-                            jdk: '',
-                            properties: [],
-                            reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'target/allure-results']],
-                            clean:true
-                        ])
+                                // Gerar o relatório do Allure
+                                allure([
+                                    includeProperties: false,
+                                    jdk: '',
+                                    properties: [],
+                                    reportBuildPolicy: 'ALWAYS',
+                                    results: [[path: 'target/allure-results']],
+                                    clean:true
+                                ])
 
 
+                            }
+                        }
                     }
-                }
-            }
+        }
+
         }
     }
 }
