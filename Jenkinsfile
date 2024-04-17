@@ -10,8 +10,9 @@ pipeline {
         stage ('Limpar resultados antigos') {
             steps {
                 //bat 'mvn clean'
-                bat 'rmdir /s /q allure-report'
+
                 bat 'xcopy /s /e /i /y "allure-report//history" "allure-results//history"'
+                //bat 'rmdir /s /q allure-report'
 
             }
         }
