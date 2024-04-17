@@ -9,21 +9,15 @@ pipeline {
         stage('Executando testes JUnit 5') {
             steps {
                 bat 'mvn clean test'
+                // Gerar relatório Allure com a opção --clean
+                bat 'allure generate allure-results --clean -o allure-report'
+                // Copiar a pasta 'history' para 'allure-results' para atualizar a tendência
+                bat 'xcopy /s /e allure-report\\history allure-results\\history'
             }
             post {
                 always {
-                    // Gerar relatório Allure
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'target/allure-results']]
-                    ])
-                    // Copiar a pasta 'history' para 'allure-results' para atualizar a tendência
-                    script {
-                        bat 'xcopy /s /e allure-report\\history allure-results\\history'
-                    }
+                    // Arquivar relatório Allure
+                    archiveArtifacts artifacts: 'allure-report'
                 }
             }
         }
