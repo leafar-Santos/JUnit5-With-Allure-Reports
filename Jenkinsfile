@@ -10,7 +10,7 @@ pipeline {
         stage ('Limpar resultados antigos') {
             steps {
                 bat 'mvn clean'
-                bat 'xcopy /s /e /i /y "allure-report/history" "allure-results/history"'
+                bat 'xcopy /s /e /i /y "allure-report//history" "allure-results//history"'
                 bat 'rmdir /s /q allure-report'
             }
         }
@@ -29,7 +29,7 @@ pipeline {
                             jdk: '',
                             properties: [],
                             reportBuildPolicy: 'ALWAYS',
-                            results: [[path: 'target/allure-results']]
+                            results: [[path: 'allure-results']]
                         ])
 
                     }
