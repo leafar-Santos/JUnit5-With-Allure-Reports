@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: parametrizacao.parametrizacaoComCSV.ParametrizarCsvTest
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.215 s - in parametrizacao.parametrizacaoComCSV.ParametrizarCsvTest
