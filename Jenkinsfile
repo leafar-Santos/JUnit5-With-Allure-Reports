@@ -12,7 +12,7 @@ pipeline {
             }
         }
         stage('Publish') {
-                echo 'Publish Allure report'
+                steps{
                 publishHTML(
                         target: [
                                 allowMissing         : false,
@@ -23,6 +23,7 @@ pipeline {
                                 reportName           : "Allure Report"
                         ]
                 )
+                }
             }
           stage ('Fim'){
                     steps{
