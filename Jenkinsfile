@@ -11,18 +11,17 @@ pipeline {
            steps{
               bat 'mvn clean test'
            }
+        post{
+            success{ allure([
+                 allure includeProperties: false,
+                 jdk: '',
+                 properties:[],
+                 reportBuildPolicy: 'ALWAYS',
+                 results: [[path: 'allure_results']]
+            ])
+
+                }
+            }
         }
-
-        stage ('Allure'){
-            steps{
-               allure includeProperties: false,
-               jdk: '',
-               properties:[],
-               reportBuildPolicy: 'ALWAYS',
-               results: [[path: 'allure_results']]
-               }
-             }
-
-
     }
 }
