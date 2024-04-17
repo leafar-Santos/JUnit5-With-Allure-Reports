@@ -12,9 +12,6 @@ pipeline {
             }
             post {
                 always {
-                    // Remover resultados antigos do Allure
-                    deleteDir()
-
                     // Gerar relatório Allure
                     allure([
                         includeProperties: false,
