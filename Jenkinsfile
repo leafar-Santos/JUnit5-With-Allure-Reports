@@ -1,18 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage ('Inicio') {
+        stage('Inicio') {
             steps {
                 bat 'echo inicio'
             }
         }
-        stage ('Executando testes JUnit 5') {
+        stage('Executando testes JUnit 5') {
             steps {
                 bat 'mvn clean test'
             }
             post {
                 always {
-                    // Gerar relatório Allure e atualizar Trends de execução de teste
+                    // Gerar relatório Allure
                     allure([
                         includeProperties: false,
                         jdk: '',
@@ -21,7 +21,7 @@ pipeline {
                         results: [[path: 'target/allure-results']]
                     ])
                     // Arquivar e substituir histórico de tendência do Allure
-                    artifacts: 'allure-report/history-trend.json'
+                    archiveArtifacts artifacts: 'allure-report/history-trend.json'
                 }
             }
         }
