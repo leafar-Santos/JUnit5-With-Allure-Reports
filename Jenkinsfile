@@ -10,6 +10,7 @@ pipeline {
             steps{
              bat 'mvn clean test'
             }
+        stage{
             steps{
              allure([
                              includeProperties: false,
@@ -18,6 +19,7 @@ pipeline {
                              reportBuildPolicy: 'ALWAYS',
                              results: [[path: 'target/allure-results']]
                            ])
+             }
 
             }
 
