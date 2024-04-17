@@ -13,17 +13,10 @@ pipeline {
         }
         stage('Publish') {
                 steps{
-                publishHTML(
-                        target: [
-                                allowMissing         : false,
-                                alwaysLinkToLastBuild: false,
-                                keepAll              : true,
-                                reportDir            : 'target/site/allure-maven-plugin',
-                                reportFiles          : 'index.html',
-                                reportName           : "Allure Report"
-                        ]
-                )
-                }
+                allure includeProperties:
+                               false,
+                               jdk: '',
+                               results: [[path: 'build/allure-results']]
             }
           stage ('Fim'){
                     steps{
