@@ -15,7 +15,7 @@ pipeline {
             post {
                 always {
                     // Remover resultados antigos do Allure
-                    deleteDir(dir: 'allure-results')
+                    deleteDir()
 
                     // Copiar resultados da execução atual de volta para o diretório allure-results
                     sh 'mv allure-results-temp allure-results'
