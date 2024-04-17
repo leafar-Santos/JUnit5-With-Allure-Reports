@@ -11,14 +11,18 @@ pipeline {
              bat 'mvn clean test'
             }
         }
-        stage ('Gerando relatório'){
-            steps{
-            allure includeProperties:
-                false,
-                jdk: '',
-                results: [[path: 'allure-results']]
-            }
-        }
+        stage('Generate Allure Report') {
+                    steps {
+                        script {
+                                allure([
+                                    includeProperties: false,
+                                    jdk: '',
+                                    properties: [],
+                                    reportBuildPolicy: 'ALWAYS',
+                                    results: [[path: 'allure-results']]
+                                ])
+                        }
+                    }
 
         stage ('Fim'){
                     steps{
