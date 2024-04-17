@@ -24,17 +24,5 @@ pipeline {
                 }
             }
         }
-        
-        stage('Rapport Allure') {
-            script {
-                allure([
-                includeProperties: false,
-                jdk: '',
-                properties: [],
-                reportBuildPolicy: 'ALWAYS',
-                results: [[path: 'allure-results']]
-                        ])
-                }
-            }
     }
 }
