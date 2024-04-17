@@ -11,11 +11,19 @@ pipeline {
              bat 'mvn clean test'
             }
         }
-        stage ('Gerando Relatório Allure'){
-            steps{
-                allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+        tage('Publish') {
+                echo 'Publish Allure report'
+                publishHTML(
+                        target: [
+                                allowMissing         : false,
+                                alwaysLinkToLastBuild: false,
+                                keepAll              : true,
+                                reportDir            : 'target/site/allure-maven-plugin',
+                                reportFiles          : 'index.html',
+                                reportName           : "Allure Report"
+                        ]
+                )
             }
-        }
           stage ('Fim'){
                     steps{
                         bat 'echo fim'
