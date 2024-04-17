@@ -15,8 +15,9 @@ pipeline {
                 allure ([
                 includeProperties: false,
                 jdk: '',
-                results: [[path: 'allure-results']]]),
+                results: [[path: 'allure-results']],
                 clean:true
+                ])
                 }
             }
         }
