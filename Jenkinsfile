@@ -11,7 +11,7 @@ pipeline {
              bat 'mvn clean test'
             }
         }
-        tage('Publish') {
+        stage('Publish') {
                 echo 'Publish Allure report'
                 publishHTML(
                         target: [
