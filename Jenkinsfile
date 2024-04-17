@@ -8,12 +8,13 @@ pipeline {
         }
         stage ("Executando testes JUnit 5") {
             steps {
-                bat 'mvn test'
+                bat 'mvn test',
+                bat 'allure generate --clean'
             }
             post {
                 always {
                     script {
-                     bat 'allure generate --clean'
+
                         // Gerar o relatório do Allure
                         allure([
                             includeProperties: false,
@@ -23,7 +24,7 @@ pipeline {
                             results: [[path: 'target/allure-results']],
                             clean:true
                         ])
-                        
+
 
                     }
                 }
