@@ -10,6 +10,8 @@ pipeline {
         stage ('Limpar resultados antigos') {
             steps {
                 bat 'mvn clean'
+                bat 'xcopy /s /e /i "allure-report\\history" "allure-results\\history"'
+                bat 'rmdir /s /q allure-report'
             }
         }
 
@@ -20,13 +22,7 @@ pipeline {
             post {
                 always {
                     script {
-                        // Copiar a pasta history para allure-results
-                        bat 'xcopy /s /e "allure-report\\history" "allure-results\\history"'
-
-                        // Excluir a pasta allure-report
-                        bat 'rmdir /s /q allure-report'
-
-                        // Gerar o relatório do Allure novamente
+                        // Gerar o relatório do Allure
                         allure([
                             includeProperties: false,
                             jdk: '',
