@@ -9,7 +9,6 @@ pipeline {
 
         stage ('Executando testes JUnit 5'){
            steps{
-	          bat 'rm -rf allure-results'
               bat 'mvn clean test'
            }
         post{
