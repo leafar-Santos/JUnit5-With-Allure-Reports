@@ -10,11 +10,11 @@ pipeline {
         stage ('Executando testes JUnit 5') {
             steps {
                 bat 'mvn clean test'
-                bat 'xcopy allure-report\\history allure-results /E /Q'
+                bat 'xcopy allure-report\\history allure-results /E /Q /Y'
             }
             post {
                 always {
-                     bat script: 'xcopy allure-report\\history allure-results /E /Q', label: 'Copy Allure History to Results'
+                     bat script: 'xcopy allure-report\\history allure-results /E /Q /Y', label: 'Copy Allure History to Results'
                      allure([
                      includeProperties: false,
                      jdk: '',
