@@ -10,6 +10,7 @@ pipeline {
         stage ('Executando testes JUnit 5') {
             steps {
                 bat 'mvn clean test'
+                bat 'xcopy allure-report\\history allure-results /E /Q'
             }
             post {
                 always {
@@ -20,7 +21,7 @@ pipeline {
                      properties: [],
                      reportBuildPolicy: 'ALWAYS',
                      results: [[path: 'allure-results']],
-                     bat 'xcopy allure-report/history allure-results /E /Q'
+                     
                      ])
                 }
             }
