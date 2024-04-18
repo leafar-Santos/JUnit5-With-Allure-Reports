@@ -15,7 +15,6 @@ pipeline {
             always{ allure([
                  includeProperties: false,
                  jdk: '',
-                 properties:[clean:true],
                  reportBuildPolicy: 'ALWAYS',
                  results: [[path: 'allure-results']]
             ])
