@@ -13,10 +13,11 @@ pipeline {
               bat 'mvn clean test'
            }
         post{
-            always{ allure includeProperties:
-                       false,
-                       jdk: '',
-                       results: [[path: 'build/allure-results']]
+            always{
+            allure includeProperties:
+                   false,
+                   jdk: '',
+                   results: [[path: 'allure-results']]
                 }
             }
         }
