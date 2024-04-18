@@ -35,7 +35,7 @@ public class Fails_AssertsTest {
     public void deveFalhar05(){
         assertThat(1,Matchers.is(6));
     }
-
+/*
     @Test
     public void deveFalhar06(){
         assertThat(1,Matchers.is(7));
@@ -70,6 +70,9 @@ public class Fails_AssertsTest {
     public void deveFalhar12(){
         assertThat(1,Matchers.is(7));
     }
+
+    */
+
 
 
 
