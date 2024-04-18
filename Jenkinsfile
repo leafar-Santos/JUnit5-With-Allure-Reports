@@ -13,22 +13,17 @@ pipeline {
             }
             post {
                 always {
+                bat 'rmdir /S /Q allure-results'
                      allure([
                      includeProperties: false,
                      jdk: '',
                      properties: [],
                      reportBuildPolicy: 'ALWAYS',
-                     results: [[path: 'target/allure-results']],
+                     results: [[path: '/allure-results']],
 
                      ])
                 }
             }
-
         }
-        post {
-                            always {
-                                deleteDir()
-                            }
-                        }
     }
 }
