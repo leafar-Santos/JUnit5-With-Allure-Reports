@@ -12,7 +12,7 @@ pipeline {
                 bat 'mvn clean test'
 
                 // Copiar a pasta 'history' para dentro de 'allure-results'
-                bat 'xcopy /E /I allure-report\\history allure-results\\history'
+                bat 'xcopy /E /I allure-report/history allure-results'
             }
             post {
                 always {
