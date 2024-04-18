@@ -13,12 +13,12 @@ pipeline {
            }
         post{
             always{ allure([
+                 clean:true,
                  includeProperties: false,
                  jdk: '',
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
-                 clean:true,
-                 results: [[path: 'allure-results']],
+                 results: [[path: 'allure-results']]
             ])
 
                 }
