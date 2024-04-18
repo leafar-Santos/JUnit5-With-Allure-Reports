@@ -14,14 +14,14 @@ pipeline {
             post {
                 always {
                     // Excluir a pasta 'allure-reports' antes de gerar o relatório
-                    bat 'rmdir /S /Q allure-report'
+                    //bat 'rmdir /S /Q allure-report'
 
                     allure([
                         includeProperties: false,
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
-                        report: 'allure-report',
+                        //report: 'allure-report',
                         results: [[path:'allure-results']]
                     ])
                 }
