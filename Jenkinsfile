@@ -19,6 +19,10 @@ pipeline {
                     // Excluir a pasta 'allure-report' antes de gerar o relatório
                     bat 'rmdir /S /Q target\\allure-report'
 
+                    // Gerar o relatório Allure
+                    bat 'allure generate allure-results --clean -o target/allure-report'
+
+                    // Incluir os resultados dos testes no relatório Allure
                     allure includeProperties: false,
                           jdk: '',
                           results: [[path: 'target/allure-results']]
