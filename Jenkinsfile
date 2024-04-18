@@ -20,7 +20,7 @@ pipeline {
                     bat 'rmdir /S /Q allure-report'
 
                     // Gerar o relatório Allure
-                    bat 'allure generate allure-results --clean -o target/allure-report'
+                    bat 'allure generate allure-results --clean'
 
                     // Incluir os resultados dos testes no relatório Allure
                     allure includeProperties: false,
