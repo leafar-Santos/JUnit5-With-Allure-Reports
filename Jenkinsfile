@@ -1,23 +1,28 @@
 pipeline {
     agent any
-    stages {
-        stage ('Inicio') {
-            steps {
+    stages{
+        stage ('Inicio'){
+            steps{
                 bat 'echo inicio'
             }
         }
-        stage ("Executando testes JUnit 5") {
-            steps {
-                // Limpar a pasta de resultados antigos
-                bat 'rm -rf allure-results'
-                // Executar os testes
-                bat 'mvn test'
-            }
-        }
-        stage('Gerando report') {
-            steps {
-                // Gerar o relatório do Allure
-                bat 'allure generate --clean -o allure-report allure-results'
+
+        stage ('Executando testes JUnit 5'){
+           steps{
+	      bat 'rm -rf allure-results'
+              bat 'mvn clean test'
+           }
+        post{
+            always{ allure([
+                 includeProperties: false,
+                 jdk: '',
+                 properties:[],
+                 reportBuildPolicy: 'ALWAYS',
+                 results: [[path: 'target/allure-results']]
+
+            ])
+
+                }
             }
         }
     }
