@@ -13,13 +13,13 @@ pipeline {
             }
             post {
                 always {
-                bat 'rmdir /S /Q allure-results'
+                bat 'rmdir /S /Q allure-reports'
                      allure([
                      includeProperties: false,
                      jdk: '',
                      properties: [],
                      reportBuildPolicy: 'ALWAYS',
-                     results: [[path: '/allure-results']],
+                     results: [[path: 'allure-results']],
 
                      ])
                 }
