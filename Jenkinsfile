@@ -16,6 +16,8 @@ pipeline {
                     script {
                         if (fileExists('allure-results')) {
                             bat 'allure generate allure-results --clean -o allure-report'
+                        } else {
+                            echo 'Nenhum resultado do Allure encontrado.'
                         }
                     }
                     allure includeProperties: false,
