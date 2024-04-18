@@ -13,7 +13,7 @@ pipeline {
             }
             post {
                 always {
-                     bat 'xcopy allure-report/history' 'allure-results /E /Y'
+                     bat 'xcopy allure-report/history allure-results /E /Y'
                      allure([
                      includeProperties: false,
                      jdk: '',
