@@ -14,7 +14,7 @@ pipeline {
             }
             post {
                 always {
-                     bat 'xcopy allure-report\\history allure-results /E /Q',
+                     bat script: 'xcopy allure-report\\history allure-results /E /Q', label: 'Copy Allure History to Results'
                      allure([
                      includeProperties: false,
                      jdk: '',
