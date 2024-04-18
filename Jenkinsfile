@@ -9,7 +9,7 @@ pipeline {
 
         stage ('Executando testes JUnit 5'){
            steps{
-	      bat 'rm -rf allure-results'
+	          bat 'rm -rf allure-results'
               bat 'mvn clean test'
            }
         post{
@@ -18,7 +18,9 @@ pipeline {
                  jdk: '',
                  properties:[],
                  reportBuildPolicy: 'ALWAYS',
-                 results: [[path: '/allure-results']]
+                 report: [[path:'allure_reports']],
+                 results: [[path:'allure-results']]
+
 
             ])
 
