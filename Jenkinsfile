@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage ('Inicio') {
             steps {
-                bat 'echo inicio'
+                sh'echo inicio'
             }
         }
 
         stage ('Executando testes JUnit 5') {
             steps {
-                bat 'mvn clean install'
+                sh 'mvn clean install'
 
             }
             post {
