@@ -13,7 +13,7 @@ pipeline {
             }
             post {
                 always {
-                bat 'rmdir /S /Q allure-report'
+                bat 'rmdir /S /Q allure-report/history'
                      allure([
                      includeProperties: false,
                      jdk: '',
