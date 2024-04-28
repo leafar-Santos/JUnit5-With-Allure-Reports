@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@Ignore
+@Disabled
 public class Fails_AssertsTest {
 
 
