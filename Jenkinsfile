@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('Inicio') {
             steps {
-                sh'echo inicio'
+                bat 'echo inicio'
             }
         }
 
