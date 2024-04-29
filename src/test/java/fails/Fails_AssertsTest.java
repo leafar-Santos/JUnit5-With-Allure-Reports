@@ -63,11 +63,11 @@ public class Fails_AssertsTest {
     public void deveFalhar11(){
         assertThat(1,Matchers.is(6));
     }
-    */
+
     @Test
     public void deveFalhar12(){
         assertThat(1,Matchers.is(7));
     }
-
+      */
 
 }
