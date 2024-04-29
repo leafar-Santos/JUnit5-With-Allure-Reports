@@ -6,9 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
-@Disabled
 public class Fails_AssertsTest {
-    /*
+
 
     @Test
     public void deveFalhar01(){
@@ -69,6 +68,5 @@ public class Fails_AssertsTest {
     public void deveFalhar12(){
         assertThat(1,Matchers.is(7));
     }
-      */
 
 }
